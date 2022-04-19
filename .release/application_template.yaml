@@ -1,6 +1,6 @@
 ##comment
 ---
-app: amundsen-release-variables
+app: amundsen
 auto_deploy: true
 context: release-handsup-us-east-1
 domain: amemsenennn.releaseapp.gethandsup.com
@@ -40,6 +40,11 @@ charts:
 - name: remote-ingress
   repo_url: https://github.com/releasehub-com/helm-ingress.git
   directory: amundsen-kube-helm/templates/release-ingress
+  values: values.yaml
+infrastructure:
+- name: make-s3-bucket
+  type: terraform
+  directory: terraform
   values: values.yaml
 builds:
 - name: nginx
