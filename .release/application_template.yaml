@@ -1,6 +1,6 @@
 ##comment
 ---
-app: amundsen
+app: amundsen-development
 auto_deploy: true
 context: release-handsup-us-east-1
 domain: amemsenennn.releaseapp.gethandsup.com
