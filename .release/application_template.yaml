@@ -43,6 +43,11 @@ builds:
 - namme: vote
   repo_url: https://github.com/dustyspace/example-vote-1.git
   context: vote
+infrastructure:
+- name: make-s3-bucket
+  type: terraform
+  directory: terraform
+  values: values.yaml
 jobs:
 - name: migrate
   command:
@@ -54,17 +59,9 @@ jobs:
 workflows:
 - name: setup
   parallelize:
-  - step: data
+  - step: redis
     tasks:
-    - services.postgres
-    - services.redis
-  - step: migrate
-    tasks:
-    - jobs.migrate
-  - step: amundsen
-    tasks:
-    - charts.amundsen
-    - charts.ingress
+    - infrastructure.make-s3-bucket
 - name: patch
   parallelize:
   - step: amundsen-stepz
