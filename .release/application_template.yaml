@@ -24,7 +24,7 @@ services:
   image: postgres:11
 - name: redis
   image: redis
-  command: ['sh', '-c', "echo 'failing now...' && sleep 5 && exit 1"]
+  # command: ['sh', '-c', "echo 'failing now...' && sleep 5 && exit 1"]
 - name: backend
   image: dustyspace/amundsen/nginx
   has_repo: true
@@ -52,7 +52,6 @@ workflows:
     tasks:
     - services.redis
     wait_for_finish: false
-    halt_on_error: true
   - step: amundsen
     tasks:
     - charts.amundsen
