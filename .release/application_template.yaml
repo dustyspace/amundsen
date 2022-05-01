@@ -32,6 +32,8 @@ charts:
 - name: amundsen
   directory: amundsen-kube-helm/templates/helm
   values: values.yaml
+  wait: true
+  timeout: 30
 - name: ingress
   directory: amundsen-kube-helm/templates/release-ingress
   values: values.yaml
