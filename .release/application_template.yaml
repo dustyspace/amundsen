@@ -63,4 +63,13 @@ workflows:
   - step: amundsen-stepz
     tasks:
     - charts.amundsen
+- name: teardown
+  parallelize:
+  - step: amundsen-teardown
+    tasks:
+    - charts.amundsen
+  - step: release-teardown
+    tasks:
+    - release.remove_environment
+
 
