@@ -55,6 +55,11 @@ infrastructure:
 builds:
 - name: nginx
   dockerfile: Dockerfile.release
+  image_scan:
+    severity: high
+    whitelist:
+    - name: CVE-2022-1292
+      reason: "don't care"
 - namme: vote
   repo_url: https://github.com/dustyspace/example-vote-1.git
   context: vote
