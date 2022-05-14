@@ -41,6 +41,12 @@ charts:
   repo_url: https://github.com/releasehub-com/helm-ingress.git
   directory: amundsen-kube-helm/templates/release-ingress
   values: values.yaml
+- name: vault
+  repo_url: https://helm.releases.hashicorp.com
+  add: hashicorp
+  install: hashicorp/vault
+  directory: helm/hashicorp
+  values: values.yml
 infrastructure:
 - name: make-s3-bucket
   type: terraform
@@ -63,13 +69,6 @@ jobs:
 workflows:
 - name: setup
   parallelize:
-  - step: data
-    tasks:
-    - services.postgres
-    - services.redis
-  - step: migrate
-    tasks:
-    - jobs.migrate
   - step: amundsen
     tasks:
     - charts.amundsen
@@ -80,4 +79,12 @@ workflows:
   - step: amundsen-stepz
     tasks:
     - charts.amundsen
+- name: teardown
+  parallelize:
+  - step: amundsen-teardown
+    tasks:
+    - charts.amundsen
+  - step: release-teardown
+    tasks:
+    - release.remove_environment
 
