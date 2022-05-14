@@ -46,7 +46,7 @@ charts:
   add: hashicorp
   install: hashicorp/vault
   directory: helm/hashicorp
-  values: values.yml
+  values: values.yaml
   # infrastructure:
   # - name: make-s3-bucket
   #   type: terraform
