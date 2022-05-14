@@ -71,6 +71,7 @@ workflows:
   parallelize:
   - step: amundsen
     tasks:
+    - charts.vault
     - charts.amundsen
     - charts.ingress
     - charts.remote-ingress
