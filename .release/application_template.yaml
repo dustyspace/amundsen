@@ -39,7 +39,7 @@ charts:
   values: values.yaml
 - name: remote-ingress
   repo_url: https://github.com/releasehub-com/helm-ingress.git
-  directory: amundsen-kube-helm/templates/release-ingress
+  directory: "."
   values: values.yaml
 - name: vault
   repo_url: https://helm.releases.hashicorp.com
