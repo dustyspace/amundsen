@@ -47,11 +47,11 @@ charts:
   install: hashicorp/vault
   directory: helm/hashicorp
   values: values.yml
-infrastructure:
-- name: make-s3-bucket
-  type: terraform
-  directory: terraform
-  values: values.yaml
+  # infrastructure:
+  # - name: make-s3-bucket
+  #   type: terraform
+  #   directory: terraform
+  #   values: values.yaml
 builds:
 - name: nginx
   dockerfile: Dockerfile.release
