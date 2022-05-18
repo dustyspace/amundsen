@@ -2,7 +2,7 @@
 ---
 app: amundsen-development
 auto_deploy: true
-context: release-handsup-us-east-1
+context: release-test-us-west-2
 domain: amemsenennn.releaseapp.gethandsup.com
 mode: development
 repo_name: dustyspace/amundsen
