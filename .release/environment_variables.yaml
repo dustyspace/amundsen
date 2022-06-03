@@ -1,6 +1,7 @@
 ---
 gitops:
   immutable_keys: ['CUSTOMER_NAME']
+# comment
 defaults:
 - key: CUSTOMER_NAME
   value:
