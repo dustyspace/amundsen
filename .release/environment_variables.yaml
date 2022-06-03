@@ -4,6 +4,8 @@ gitops:
 defaults:
 - key: CUSTOMER_NAME
   value:
+- key: NOTHER_VAR
+  value: where are you?
 - key: ANOTHER_VAR
   value: where are you?
 - key: OTHER_VAR
